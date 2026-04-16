@@ -397,6 +397,43 @@ strong {
   color: var(--secondary-color);
 }
 
+.language-switcher {
+  display: inline-flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.language-btn {
+  min-width: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--white-color);
+  font-size: 13px;
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+  padding: 9px 10px;
+  transition: all 0.2s ease;
+}
+
+.language-btn:hover,
+.language-btn.active {
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--white-color);
+}
+
+.is-sticky .language-btn {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.is-sticky .language-btn:hover,
+.is-sticky .language-btn.active {
+  color: var(--white-color);
+}
+
 .navbar-toggler {
   border: 0;
   padding: 0;
@@ -495,7 +532,7 @@ strong {
 }
 
 .hero h2 {
-	font-size: 38px;
+  font-size: 34px;
 }
 
 .hero-text {
@@ -799,8 +836,11 @@ strong {
 }
 
 .hero h2 {
-  max-width: 760px;
-  line-height: 1.2;
+  max-width: min(760px, 100%);
+  line-height: 1.25;
+  letter-spacing: 0;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .profile-body p {
@@ -1034,10 +1074,13 @@ strong {
     min-width: 650px;
   }
   
-  .hero-title,
-	.hero h2 {
-	  font-size: var(--h2-font-size);
+  .hero-title {
+	  font-size: 40px;
 	}
+
+  .hero h2 {
+    font-size: 34px;
+  }
 }
 
 @media screen and (max-width: 991px) {
@@ -1114,6 +1157,20 @@ strong {
     padding-bottom: 10px;
   }
 
+  .language-switcher {
+    display: flex;
+  }
+
+  .language-btn {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+  }
+
+  .language-btn:hover,
+  .language-btn.active {
+    color: var(--white-color);
+  }
+
   .hero {
     padding-top: 200px;
     padding-bottom: 400px;
@@ -1122,6 +1179,10 @@ strong {
   .hero-text {
     top: 0;
     margin-bottom: 120px;
+  }
+
+  .hero h2 {
+    font-size: 30px;
   }
 
   .about-thumb {
@@ -1214,6 +1275,11 @@ strong {
   .hero-image-wrap {
     width: 300px;
     height: 300px;
+  }
+
+  .hero h2 {
+    font-size: 25px;
+    padding: 10px 18px;
   }
 
   .hero-image {
